@@ -35,21 +35,17 @@ public class EditerCollaborateurController extends HttpServlet {
 		String nomParam = req.getParameter("nom");
 		String prenomParam = req.getParameter("prenom");
 		
-		if (StringUtils.isBlank(matriculeParam) || StringUtils.isBlank(titreParam) || 
-				StringUtils.isBlank(nomParam) || StringUtils.isBlank(prenomParam)) {
+		if (StringUtils.isBlank(matriculeParam) || StringUtils.isBlank(titreParam) || StringUtils.isBlank(nomParam) || StringUtils.isBlank(prenomParam)) {
 			
 			if (StringUtils.isBlank(matriculeParam)) {
 				messageError += "matricule";
 			}
-			
 			if (StringUtils.isBlank(titreParam)) {
 				messageError += "titre";
 			}
-			
 			if (StringUtils.isBlank(nomParam)) {
 				messageError += "nom";
 			}
-			
 			if (StringUtils.isBlank(prenomParam)) {
 				messageError += "prenom";
 			}
@@ -66,5 +62,10 @@ public class EditerCollaborateurController extends HttpServlet {
 					+ "</ul></body></html>");
 			resp.setStatus(201);
 		}
+	}
+	
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 	}
 }
