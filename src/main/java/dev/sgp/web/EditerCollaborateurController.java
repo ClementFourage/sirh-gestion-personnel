@@ -40,16 +40,21 @@ public class EditerCollaborateurController extends HttpServlet {
 			if (StringUtils.isBlank(matriculeParam)) {
 				messageError += "matricule";
 			}
+			
 			if (StringUtils.isBlank(titreParam)) {
 				messageError += "titre";
 			}
+			
 			if (StringUtils.isBlank(nomParam)) {
 				messageError += "nom";
 			}
+			
 			if (StringUtils.isBlank(prenomParam)) {
 				messageError += "prenom";
 			}
+			
 			resp.sendError(400, messageError);
+			
 		} else {
 			resp.setCharacterEncoding("UTF-8");
 			resp.getWriter().write("<html><head><meta charset=\"utf-8\" /></head><body><h1>Edition des collaborateurs</h1>" 
